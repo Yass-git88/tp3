@@ -23,7 +23,7 @@ public class TestCryptoMarche {
 
         //Test Portefeuille
         System.out.print("Test Portefeuille transfertDevise \t ...");
-        if (antoineBtc.getMontant() == 12 && aliceBtc.getMontant() == 3)
+        if (antoineBtc.getMontant() == 12.0 && aliceBtc.getMontant() == 3.0)
             System.out.println(" OK");
         else
             System.out.println(" FAIL");
