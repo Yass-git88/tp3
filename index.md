@@ -66,4 +66,9 @@ Le PSG vise chaque saison :
 
 ---
 
+<<<<<<< HEAD
 > "Ici c’est Paris ! 🇫🇷🔴🔵"
+=======
+> "Ici c’est Paris ! 🇫🇷🔴🔵"
+
+>>>>>>> dfec25f8347f009301ca53f4bb3ee3dfba4b754c
