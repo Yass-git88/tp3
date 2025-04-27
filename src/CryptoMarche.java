@@ -11,7 +11,7 @@ public class CryptoMarche {
 
     public static CryptoMarche getInstance(){
         if(marche == null){ marche = new CryptoMarche();}
-		return marche;
+        return marche;
     }
 
     public void ajouter(Portefeuille p){
@@ -19,39 +19,38 @@ public class CryptoMarche {
     }
 
     /**
-     * Cette fonction recherche sur le marchÃ© tous les portefeuilles 
-     * du propriÃ©taire et calcule son capital en euros. 
+     * Cette fonction recherche sur le marché tous les portefeuilles 
+     * du propriétaire et calcule son capital en euros. 
      * @param proprietare
-     * @return capital en euros du propriÃ©tare.
+     * @return capital en euros du propriétare.
      */
     public double capitalEnEuros(String proprietaire){
-        double capitale = 0.0;
-        for (int cpt = 0 ; cpt < this.portefeuilles.size() ; cpt++)
-            if (this.portefeuilles.get(cpt).estProprietaire(proprietaire))
-            {
-                capitale += this.portefeuilles.get(cpt).getMontant() ;
-            }  
+        double capital = 0;
+        for(Portefeuille p : this.portefeuilles){
+            if(p.getProprietaire().equals(proprietaire)){
+                capital += p.valeurEnEuros();
+            }
+        }
 
-        return capitale;
+        return capital;
     }
 
     /**
-     * Cette fonction recherche sur le marchÃ© tous les portefeuilles 
+     * Cette fonction recherche sur le marché tous les portefeuilles 
      * d'un type de devise et calcule le volume total de capital de 
-     * cette devise sur le marchÃ© 
+     * cette devise sur le marché 
      * @param monnaie
      * @return capital total en circulation de la cryptomonnaie (en euros).
      */
     public double capitalMonneaie(Cryptomonnaie monnaie){
-        double capitale = 0.0;
-        for (int cpt = 0 ; cpt < this.portefeuilles.size() ; cpt++)
-            if (this.portefeuilles.get(cpt).getMonnaie().equals(monnaie))
-            {
-                capitale += this.portefeuilles.get(cpt).valeurEnEuros() ;
-            }  
+        double capital = 0;
+        for(Portefeuille p : this.portefeuilles){
+            if(p.getMonnaie().equals(monnaie)){
+                capital += p.valeurEnEuros();
+            }
+        }
 
-        return capitale;
-
+        return capital;
 
     }
 

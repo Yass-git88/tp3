@@ -10,7 +10,7 @@ public class TestCryptoMarche {
         Portefeuille antoineEth = new Portefeuille(ethereum, 10, "Antoine");
         Portefeuille aliceBtc   = new Portefeuille(bitcoin,   5, "Alice"  );
 
-        //Creation du marchÃ©
+        //Creation du marché
         CryptoMarche marche = CryptoMarche.getInstance();
         marche.ajouter(antoineBtc);
         marche.ajouter(antoineEth);
@@ -23,7 +23,7 @@ public class TestCryptoMarche {
 
         //Test Portefeuille
         System.out.print("Test Portefeuille transfertDevise \t ...");
-        if (antoineBtc.getMontant() == 12.0 && aliceBtc.getMontant() == 3.0)
+        if (antoineBtc.getMontant() == 12 && aliceBtc.getMontant() == 3)
             System.out.println(" OK");
         else
             System.out.println(" FAIL");
